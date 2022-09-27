@@ -24,9 +24,9 @@ console.log(buttons, "All");
 
 // Event handler and listener for button1
 
-button1.addEventListener("click", function() {
-    console.log("Fired");
-})
+// button1.addEventListener("click", function() {
+//     console.log("Fired");
+// })
 
 
 // Capture Container element
@@ -47,3 +47,55 @@ container.addEventListener("mouseleave", mouseLeft);
 
 // Go checkout multiple types of events
 // https://developer.mozilla.org/en-US/docs/Web/Events
+
+
+
+// Capture img element
+
+const image = document.querySelector("img");
+
+
+
+const orignalImage = image.src;
+
+// We can also do some operations like changing image using a button event
+button1.addEventListener("click", function() {
+    image.src = "https://img.freepik.com/free-photo/beautiful-scenery-phragmites-plants-by-sea-with-swimming-pelican-sunset_181624-37787.jpg"
+})
+
+
+
+// IF YOU WANT TO TOGGLE OR DO SOME FUNCTIONALITY YOU CAN USE THIS LOGIC AS WELL
+let toggleMe = true;
+let newImage = "https://img.freepik.com/free-photo/beautiful-scenery-phragmites-plants-by-sea-with-swimming-pelican-sunset_181624-37787.jpg"
+
+// We can also do some operations like changing image using a button event
+button1.addEventListener("click", function() {
+    if (toggleMe) {
+        image.src = newImage;
+        toggleMe = false;
+    } else {
+        image.src = orignalImage;
+        toggleMe = true;
+    }
+})
+
+// Adding classes dynamically to elements using javascript
+
+const changeColorButton = document.querySelector("#changeColor");
+changeColorButton.addEventListener("click", () => {
+    container.classList.add("green");
+})
+
+const displayNone = document.querySelector("#displayNone");
+
+displayNone.addEventListener("click", () => {
+    container.classList.remove("green");
+
+    // This is setTimeout used for firing a function after some given delay
+    setTimeout(() => {
+        container.classList.add("hidden");
+    }, 2000);
+})
+
+

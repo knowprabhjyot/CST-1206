@@ -4,3 +4,18 @@
     height: 200px;
     margin-top: 200px;
 }
+
+img {
+    margin-top: 20px;
+}
+
+.green {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    margin-top: 200px;
+}
+
+.hidden {
+    display: none;
+}
