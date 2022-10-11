@@ -165,3 +165,23 @@ let maxValue = array1.reduce((accumulator, currentValue) => {
 }, -Infinity)
 
 console.log(maxValue);
+
+
+
+
+// **************************************
+
+// FOR IN LOOP
+
+let obj = {
+    name:  "Prabh",
+    age: 28,
+    college: "VCC",
+    city: "Vancouver",
+}
+
+
+for (let key in obj) {
+    console.log(obj[key]);
+    // console.log(obj.key) We cannot do this since we are searching for "Key" and that doens't exist inside the obejct
+}
