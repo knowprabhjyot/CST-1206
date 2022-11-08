@@ -1,0 +1,18 @@
+Instructions for the Exercise
+
+
+1.  You have to make a similar UI as attached
+2. You have to get the data from the GITHUB using their API, 
+HINT: https://developer.github.com/v3/issues/#list-issues-for-a-repository
+// YOU MIGHT HAVE TO RESEARCH HOW YOU WILL USE THERE API KEY
+Read the above documentation and figure out how to get list of issues for a particular repository
+You can find issues for any repository, if you are confused, then lets say you have to find issues from React Library on github
+
+
+3. Link the data that you get from API with UI (FETCH API)
+4. If you have hover on any Card in the UI, it should highlight (OPTIONAL ADVANCE)
+5. If you click on any card, it should take you to the url of that issue
+6. If you click on the image (avatar), then it should take you to the url of that user
+7. You should also have a search bar over the UI, if the user searches, then you have to filter the list based on the search string (Search on Title) ***CHALLENGE ****
+8. Note: The design should be responsive in nature, which means, UI should not break when the browser width or height is decreased.
+9. The UI should have Four Items in Desktop view, 2 in tablet view and 1 item in Mobile View

@@ -32,10 +32,15 @@ app.get("/users", (req, res) => {
             message: "Succesfully fetched the user",
             data
         }); 
+    }).catch((error) => {
+        return res.status(404).json({
+            message: "Error",
+            error
+        }); 
     })
 })
 
-app.post("/users", (req, res) => {
+app.post("/users", async (req, res) => {
     let newUser = {
        name: req.body.name,
        email: req.body.email,
@@ -47,12 +52,27 @@ app.post("/users", (req, res) => {
     const user = new User(newUser);
 
     // Save method helps you save data in database
-    user.save().then((data) => {
-        return res.status(201).json({
+    // user.save().then((data) => {
+    //     return res.status(201).json({
+    //         message: "User succesfully created",
+    //         data
+    //     })
+    // })
+
+    try {
+
+    let response = await  user.save();
+    return res.status(201).json({
             message: "User succesfully created",
-            data
+            response
         })
-    })
+    } catch( error) {
+        res.status(500).json({
+            message: "Error creating user",
+            error
+        })
+    }
+
 
 })
 
