@@ -4,11 +4,19 @@ const PORT = 3000;
 const mongoose = require("mongoose");
 const AuthorRoutes = require("./routes/Author");
 const BookRoutes = require("./routes/Book");
+const cors = require("cors");
 
 require('dotenv').config();
 
 // So we can accept json information
 app.use(express.json());
+
+// CORS --> CROSS ORIGIN RESOURCE SHARING
+// So we have to use cors, because our browser/client application is running on 5500 port
+// And server is running on 3000 port
+// Browser doesn't allow that, so we have to use a package called as cors to allow access
+app.use(cors());
+
 
 
 mongoose.connect(process.env.MONGO_URI, (error) => {
