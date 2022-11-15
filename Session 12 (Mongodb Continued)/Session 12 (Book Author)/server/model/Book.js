@@ -13,9 +13,14 @@ const BookSchema = mongoose.Schema({
         ref: "Author",
         required: true
     }
+}, {
+    timestamps: true
 });
 
-module.exports = BookSchema;
+const BookModel = mongoose.model("Book", BookSchema);
+
+
+module.exports = BookModel;
 
 // relations
 
