@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="m-4">LIST OF BOOKS</h1>
+        <table class="m-4 table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Author</th>
+                </tr>
+            </thead>
+            <tbody id="bookTable">
+
+            </tbody>
+        </table>
+
+
+        <h1 class="m-4">ADD AN AUTHOR</h1>
+
+        
+        <form onsubmit="saveAuthor(event)">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input onkeyup="setName(event)" type="text" class="form-control" 
+                    placeholder="Enter Author Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputDescription">Email</label>
+                <input onkeyup="setEmail(event)" type="email" class="form-control" id="exampleInputDescription" placeholder="Enter Author Email">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputDescription">Contact</label>
+                <input onkeyup="setContact(event)" type="text" class="form-control" id="exampleInputDescription" placeholder="Enter Author Contact">
+            </div>
+
+
+        
+            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </form>
+
+        <h1 class="m-4">ADD A BOOK</h1>
+
+
+        <form onsubmit="saveBook(event)">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input onkeyup="setTitle(event)" type="text" class="form-control" 
+                    placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputDescription">Description</label>
+                <input onkeyup="setDescription(event)" type="text" class="form-control" id="exampleInputDescription" placeholder="Enter description">
+            </div>
+
+            <div class="form-group ">
+                <label for="exampleInputAuthors">Select Authors</label>
+
+                <select onchange="selectAuthor(event)" id="authorList" class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                   
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
